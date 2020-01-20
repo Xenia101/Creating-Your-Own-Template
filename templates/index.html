@@ -7,6 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- pickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
 
     <title>Nichijou.kr | CYOT</title>
 
@@ -114,10 +116,21 @@
                             <div class="form-group row">
                                 <label for="facebook" class="col-sm-3 col-form-label">Facebook</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="facebook" name="facebook" placeholder="facebook url">
+                                    <input type="text" class="form-control" id="facebook" name="facebook" placeholder="Facebook url">
                                 </div>
                             </div>
     
+                            <div class="form-group row">
+                                <label for="Icolor" class="col-sm-3 col-form-label">Color</label>
+                                <div class="col-sm-9">
+                                    <div class="pickr"></div>
+                                </div>
+                            </div>
+
+                            <div style="float:left" class="mx-auto" class="form-group row">
+                                <button type="button" class="btn btn-danger">Reset</button >
+                                <button type="submit" class="btn btn-success">Make</button >
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -130,6 +143,42 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+    <script type="application/javascript">
+            const pickr = Pickr.create({
+                el: '.pickr',
+                theme: 'nano', 
+                default: '#5bc0de',
+                swatches: [
+                'rgba(244, 67, 54, 1)',
+                'rgba(233, 30, 99, 0.95)',
+                'rgba(156, 39, 176, 0.9)',
+                'rgba(103, 58, 183, 0.85)',
+                'rgba(63, 81, 181, 0.8)',
+                'rgba(33, 150, 243, 0.75)',
+                'rgba(3, 169, 244, 0.7)',
+                'rgba(0, 188, 212, 0.7)',
+                'rgba(0, 150, 136, 0.75)',
+                'rgba(76, 175, 80, 0.8)',
+                'rgba(139, 195, 74, 0.85)',
+                'rgba(205, 220, 57, 0.9)',
+                'rgba(255, 235, 59, 0.95)',
+                'rgba(255, 193, 7, 1)'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: true,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                    input: true,
+                    save: true
+                    }
+                }
+            });
+        </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
