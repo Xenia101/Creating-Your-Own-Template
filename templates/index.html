@@ -9,21 +9,72 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Nichijou.kr | CYOT</title>
+
   </head>
   <body>
     <!-- As a heading -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="./static/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Creating Your Own Template
+            CYOT
         </a>
         <form class="form-inline">
-            <a style="color:#5bc0de; font-weight: bold;" href="www.nichijou.kr">XENIA</a>
+            <a style="color:#5bc0de; font-weight: bold;" href="http://www.nichijou.kr">XENIA</a>
         </form>
     </nav>
     <div class="container">
         <!-- Content here -->
-        Sample
+        <div class="row" style="margin-top:15px;">
+            <h1 class="mx-auto">Creating Your Own Template <sub style="color:#5bc0de">XENIA</sub></h1>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-sm-6" >
+                <img class="shadow-sm p-3 mb-5 bg-white rounded" width="100%" src="./static/sample.png" alt="">
+            </div>
+            <div class="col-sm-6">
+                <form action="http://localhost:5000/result", method="POST">
+                    <div class="form-group row">
+                        <label for="Title" class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Title" name="Title">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="Name" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Name" name="Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="GithubID" class="col-sm-2 col-form-label">Github</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="GithubID" name="GithubID">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="location" class="col-sm-2 col-form-label">location</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="location" name="location">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="TEXT" class="col-sm-2 col-form-label">TEXT</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="TEXT" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div style="float:right" class="mx-auto" class="form-group row">
+                        <button type="button" class="btn btn-danger">Reset</button >
+                        <button type="submit" class="btn btn-success">Make</button >
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
