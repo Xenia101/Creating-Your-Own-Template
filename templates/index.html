@@ -27,8 +27,11 @@
     <div class="container">
         <!-- Content here -->
         <div class="row" style="margin-top:15px;">
-            <h1 class="mx-auto">Creating Your Own Template <sub style="color:#5bc0de">XENIA</sub></h1>
+            <div class="col">
+                <h1 style="text-align: center;">Creating Your Own Template <sup style="color:#5bc0de">XENIA</sub></h1>
+            </div>
         </div>
+        
         <div class="row" style="margin-top:15px;">
             <div class="col-sm-6" >
                 <img class="shadow-sm p-3 mb-5 bg-white rounded" width="100%" src="./static/sample.png" alt="">
@@ -43,7 +46,7 @@
                             <div class="form-group row">
                                 <label for="GithubID" class="col-sm-2 col-form-label">Github</label>
                                 <div class="col-sm-10">
-                                    <input required type="text" class="form-control is-invalid" id="GithubID" name="GithubID" placeholder="Github ID">
+                                    <input required type="text" class="GithubID form-control is-invalid" id="GithubID" name="GithubID" placeholder="Github ID">
                                 </div>
                             </div>
         
@@ -82,15 +85,15 @@
                                         <input required type="file" class="custom-file-input" id="validatedCustomFile">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                         <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                    
                                     </div>
                                 </div>
                             </div>
         
                             <div style="float:right" class="mx-auto" class="form-group row">
-                                <button type="button" class="btn btn-danger">Reset</button >
+                                <button type="button" onclick="remove();" class="btn btn-danger">Reset</button >
                                 <button type="submit" class="btn btn-success">Make</button >
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -127,8 +130,19 @@
                                 </div>
                             </div>
 
-                            <div style="float:left" class="mx-auto" class="form-group row">
-                                <button type="button" class="btn btn-danger">Reset</button >
+                            <div class="form-group row">
+                                <label for="faviconF" class="col-sm-3 col-form-label">Favicon</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="faviconF">
+                                        <label class="custom-file-label" for="faviconF">Choose favicon file...</label>
+                                    </div>
+                                </div>
+                            </div>
+        
+
+                            <div style="float:right" class="mx-auto" class="form-group row">
+                                <button type="button" onclick="remove2();" class="btn btn-danger">Reset</button >
                                 <button type="submit" class="btn btn-success">Make</button >
                             </div>
                         </form>
@@ -143,6 +157,20 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script type="application/javascript">
+        function remove1(){
+            document.getElementById('GithubID').value='';
+            document.getElementById('Title').value='';
+            document.getElementById('Name').value='';
+            document.getElementById('TEXT').value='';
+            document.getElementById('location').value='';
+        }
+        function remove2(){
+            document.getElementById('email').value='';
+            document.getElementById('facebook').value='';
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
     <script type="application/javascript">
             const pickr = Pickr.create({
