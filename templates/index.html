@@ -37,7 +37,7 @@
                         Please enter your information
                     </div>
                     <div class="card-body">
-                        <form class="was-validated" action="http://localhost:5000/result", method="POST">
+                        <form class="was-validated" action="http://localhost:5000/result" method="POST">
                             <div class="form-group row">
                                 <label for="GithubID" class="col-sm-2 col-form-label">Github</label>
                                 <div class="col-sm-10">
@@ -92,13 +92,40 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
 
         <hr>
-        <div class="row">
+        <div class="row" style="margin-top:15px;">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        Please enter options
+                    </div>
+                    <div class="card-body">
+                        <form action="http://localhost:5000/option" method="POST">
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-3 col-form-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                                </div>
+                            </div>
             
+                            <div class="form-group row">
+                                <label for="facebook" class="col-sm-3 col-form-label">Facebook</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="facebook" name="facebook" placeholder="facebook url">
+                                </div>
+                            </div>
+    
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img class="shadow-sm p-3 mb-5 bg-white rounded" width="100%" src="./static/sample.png" alt="">
+            </div>
+
         </div>
     </div>
 
