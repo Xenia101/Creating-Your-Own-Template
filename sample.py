@@ -10,8 +10,6 @@ def home():
 def getuser():
    if request.method == 'POST':
       result = request.form
-      print(result['Title'])
-      print(result['Name'])
       return render_template("index.html",result = result)
 
 @app.route('/option',methods = ['POST', 'GET'])
