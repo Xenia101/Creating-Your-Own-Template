@@ -21,10 +21,30 @@ def getuser():
        global imgpath
        result = request.form
        print(result)
-       print(color)
-       print(imgpath)
+       #print(color)
+       #print(imgpath)
+       
+       msg = list()
+       editlist = [result['Title'], str(color), str(color), result['Title'],str(color),
+                   result['Name'], result['TEXT'], result['location'], result['email'],
+                   str('https://github.com/')+result['GithubID'], result['facebook'], result['GithubID']
+                   ]
+       for x in range(1,14):
+           filename = 'C:\\Users\\User\\Desktop\\Creating-Your-Own-Template\\index_gen\\' + str(x)
+           f = open(filename, 'r')
+           msg.append(f.read().replace('\n',''))
+           f.close()
 
-       return render_template("index.html",result = result)
+       print(len(msg))
+       print(len(editlist))
+       lastm = ''
+       for x in range(12):
+           m = msg[x] + editlist[x]
+           lastm += m
+       lastm += msg[-1]
+       print(lastm)
+           
+       return render_template("index.html")
 
 @app.route('/color', methods=['POST'])
 def color():
