@@ -153,17 +153,14 @@
         
                             <div style="float:right" class="mx-auto" class="form-group row">
                                 <button type="button" onclick="remove();" class="btn btn-danger">Reset</button >
-                                <button type="submit" class="btn btn-success">Save</button >
+                                <button type="submit" class="btn btn-success">Send template to email</button >
                             </div>
-
                         </form>
                         <script>
-                            function form1(){
-                                var GithubID = $('').val();
-                                var Title = $('').val();
-                                var Name = $('').val();
-                                var text = $('').val();
-                                var location = $('').val();
+                            function postform(){
+                                var GithubID = $('#GithubID').val();
+                                console.log(GithubID);
+
                             }
                         </script>
                     </div>
@@ -182,12 +179,14 @@
 
         <!-- Optional JavaScript -->
         <script type="application/javascript">
-            function remove1(){
+            function remove(){
                 document.getElementById('GithubID').value='';
                 document.getElementById('Title').value='';
                 document.getElementById('Name').value='';
                 document.getElementById('TEXT').value='';
                 document.getElementById('location').value='';
+                document.getElementById('email').value='';
+                document.getElementById('facebook').value='';
             }
         </script>
 
