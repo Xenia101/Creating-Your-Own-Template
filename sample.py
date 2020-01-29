@@ -19,6 +19,12 @@ def getuser():
       print(result)
       return render_template("index.html",result = result)
 
+@app.route('/color', methods=['POST'])
+def color():
+     value = request.form['color']
+     print(value)
+     return '', 204
+     
 @app.route('/option', methods=['POST'])
 def option():
     if request.method == 'POST':
