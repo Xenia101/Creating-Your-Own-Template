@@ -55,7 +55,17 @@
         
         <div class="row" style="margin-top:15px;">
             <div class="col-sm-6" >
-                <iframe class="shadow-sm p-3 mb-5 bg-white rounded" src="http://www.nichijou.kr/" style="width:100%; height:478px; border:none"></iframe>
+                <img class="shadow-sm p-3 mb-5 bg-white rounded" width="100%" src="./static/sample.png" alt="">
+
+                <div class="row">
+                    <div class="owl-carousel">
+                        <div><img src="./static/carousel0.PNG" alt=""></div>
+                        <div><img src="./static/carousel1.PNG" alt=""></div>
+                        <div><img src="./static/carousel2.PNG" alt=""></div>
+                        <div><img src="./static/carousel3.PNG" alt=""></div>
+                    </div>
+                </div>
+            
             </div>
             <div class="col-sm-6">
                 <div class="card">
@@ -109,6 +119,37 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input required type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                                </div>
+                            </div>
+            
+                            <div class="form-group row">
+                                <label for="facebook" class="col-sm-2 col-form-label">Facebook</label>
+                                <div class="col-sm-10">
+                                    <input required type="text" class="form-control" id="facebook" name="facebook" placeholder="Facebook url">
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="Icolor" class="col-sm-2 col-form-label">Color</label>
+                                <div class="col-sm-10">
+                                    <div class="pickr"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="faviconF" class="col-sm-2 col-form-label">Favicon</label>
+                                <div class="col-sm-10">
+                                    <div class="custom-file">
+                                        <input required type="file" class="custom-file-input" id="faviconF">
+                                        <label class="custom-file-label" for="faviconF">Choose favicon file...</label>
+                                    </div>
+                                </div>
+                            </div>
         
                             <div style="float:right" class="mx-auto" class="form-group row">
                                 <button type="button" onclick="remove();" class="btn btn-danger">Reset</button >
@@ -116,69 +157,21 @@
                             </div>
 
                         </form>
+                        <script>
+                            function form1(){
+                                var GithubID = $('').val();
+                                var Title = $('').val();
+                                var Name = $('').val();
+                                var text = $('').val();
+                                var location = $('').val();
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
         </div>
 
-        <hr>
         <div class="row" style="margin-top:35px;">
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        Please enter options
-                    </div>
-                    <div class="card-body">
-                        <form action="http://localhost:5000/option" method="POST">
-                            <div class="form-group row">
-                                <label for="email" class="col-sm-3 col-form-label">Email</label>
-                                <div class="col-sm-9">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
-                                </div>
-                            </div>
-            
-                            <div class="form-group row">
-                                <label for="facebook" class="col-sm-3 col-form-label">Facebook</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="facebook" name="facebook" placeholder="Facebook url">
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="Icolor" class="col-sm-3 col-form-label">Color</label>
-                                <div class="col-sm-9">
-                                    <div class="pickr"></div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="faviconF" class="col-sm-3 col-form-label">Favicon</label>
-                                <div class="col-sm-9">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="faviconF">
-                                        <label class="custom-file-label" for="faviconF">Choose favicon file...</label>
-                                    </div>
-                                </div>
-                            </div>
-        
-
-                            <div style="float:right" class="mx-auto" class="form-group row">
-                                <button type="button" onclick="remove2();" class="btn btn-danger">Reset</button >
-                                <button type="submit" class="btn btn-success">Save</button >
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <!-- Set up your HTML -->
-                <div class="owl-carousel">
-                    <div><img src="./static/carousel0.PNG" alt=""></div>
-                    <div><img src="./static/carousel1.PNG" alt=""></div>
-                    <div><img src="./static/carousel2.PNG" alt=""></div>
-                    <div><img src="./static/carousel3.PNG" alt=""></div>
-                </div>
-            </div>
 
         </div>
 
@@ -195,10 +188,6 @@
                 document.getElementById('Name').value='';
                 document.getElementById('TEXT').value='';
                 document.getElementById('location').value='';
-            }
-            function remove2(){
-                document.getElementById('email').value='';
-                document.getElementById('facebook').value='';
             }
         </script>
 
