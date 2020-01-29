@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="./static/favicon.ico">
     <!-- Title -->
     <title>Nichijou.kr | CYOT</title>
-
+    
   </head>
   <body>
     <!-- As a heading -->
@@ -73,7 +73,7 @@
                         Please enter your information
                     </div>
                     <div class="card-body">
-                        <form class="was-validated" action="http://localhost:5000/result" method="POST">
+                        <form class="was-validated" action="http://localhost:5000/result" method="POST" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label for="GithubID" class="col-sm-2 col-form-label">Github</label>
                                 <div class="col-sm-10">
@@ -113,8 +113,8 @@
                                 <label for="TEXT" class="col-sm-2 col-form-label">Image</label>
                                 <div class="col-sm-10">
                                     <div class="custom-file">
-                                        <input required type="file" class="custom-file-input" id="validatedCustomFile">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                        <input required type="file" class="custom-file-input" id="uploadfile" name="image">
+                                        <label class="custom-file-label" for="uploadfile">Choose file...</label>
                                         <div class="invalid-feedback">Example invalid custom file feedback</div>
                                     </div>
                                 </div>
@@ -141,32 +141,38 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="faviconF" class="col-sm-2 col-form-label">Favicon</label>
-                                <div class="col-sm-10">
-                                    <div class="custom-file">
-                                        <input required type="file" class="custom-file-input" id="faviconF">
-                                        <label class="custom-file-label" for="faviconF">Choose favicon file...</label>
-                                    </div>
-                                </div>
-                            </div>
-        
                             <div style="float:right" class="mx-auto" class="form-group row">
                                 <button type="button" onclick="remove();" class="btn btn-danger">Reset</button >
-                                <button type="submit" class="btn btn-success">Send template to email</button >
+                                <button id="save" type="button" class="btn btn-success" onclick="postform();">SAVE</button>
+                                <button id="make" style="display:none;" type="submit" class="btn btn-success">Send template to email</button >
                             </div>
                         </form>
-                        <script>
-                            function postform(){
-                                var GithubID = $('#GithubID').val();
-                                console.log(GithubID);
-
-                            }
-                        </script>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            function postform(){
+                var form_data = new FormData();
+                form_data.append('file', $('#uploadfile').prop('files')[0]);
+
+                $.ajax({
+                    type : 'POST',
+                    url : '/option',
+                    data : form_data,
+                    cache : false,
+                    processData : false,
+                    contentType : false,
+                    success : function(data){
+                        if (data['file'] == 'true'){
+                            document.getElementById('save').style.display = 'none';
+                            document.getElementById('make').style.display = 'inline';
+                        }
+                    }
+                });
+            }
+        </script>
 
         <div class="row" style="margin-top:35px;">
 
@@ -178,6 +184,7 @@
     </div>
 
         <!-- Optional JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="application/javascript">
             function remove(){
                 document.getElementById('GithubID').value='';
@@ -226,8 +233,7 @@
                 }
             });
         </script>
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <!-- Popper.js, then Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script type="application/javascript">
