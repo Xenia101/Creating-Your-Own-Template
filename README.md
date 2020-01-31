@@ -18,6 +18,8 @@ And this is bootstrap based and powered by Python Flask
 
 [Bootstrap](https://getbootstrap.com/)
 
+[pickr](https://github.com/Simonwep/pickr)
+
 [OwlCarousel2](https://owlcarousel2.github.io/OwlCarousel2/) 
 
 [GetGitHubRepository](https://github.com/Xenia101/get-GitHub-Repository)
