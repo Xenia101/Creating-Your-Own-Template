@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, jsonify
+import shutil
 import json
 
 app = Flask(__name__)
-UPLOAD_FOLDER = 'C:\\Users\\User\\Desktop\\Creating-Your-Own-Template\\file'
+UPLOAD_FOLDER = '/file'
 app.secret_key = "XENIA"
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -20,30 +21,31 @@ def getuser():
        global color
        global imgpath
        result = request.form
-       print(result)
-       #print(color)
-       #print(imgpath)
-       
+
        msg = list()
        editlist = [result['Title'], str(color), str(color), result['Title'],str(color),
                    result['Name'], result['TEXT'], result['location'], result['email'],
                    str('https://github.com/')+result['GithubID'], result['facebook'], result['GithubID']
                    ]
        for x in range(1,14):
-           filename = 'C:\\Users\\User\\Desktop\\Creating-Your-Own-Template\\index_gen\\' + str(x)
+           filename = 'index_gen/' + str(x)
            f = open(filename, 'r')
            msg.append(f.read().replace('\n',''))
            f.close()
 
-       print(len(msg))
-       print(len(editlist))
        lastm = ''
        for x in range(12):
            m = msg[x] + editlist[x]
            lastm += m
        lastm += msg[-1]
-       print(lastm)
-           
+
+       f = open("output/index.html", 'w')
+       f.write(lastm)
+       f.close()
+
+       shutil.copytree('sample/img', 'output/img')
+       shutil.copytree('sample/js', 'output/js')
+
        return render_template("index.html")
 
 @app.route('/color', methods=['POST'])
@@ -61,7 +63,7 @@ def option():
         global color
         color = '#5bc0de'
         isthisFile=request.files.get('file')
-        isthisFile.save("./file/"+isthisFile.filename)
+        isthisFile.save("./file/main.jpg")
         imgpath = './file/' + isthisFile.filename
         return jsonify({'file': 'true'})
     
