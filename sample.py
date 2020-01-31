@@ -59,6 +59,13 @@ def getuser():
            for filename in filenames:
                f.write(os.path.join(dirpath,filename))
        f.close()
+
+       os.remove('output/img/favicon.ico')
+       os.remove('output/img/main.jpg')
+       os.remove('output/js/GitHub-stats.js')
+       os.rmdir('output/img')
+       os.rmdir('output/js')
+       os.remove('output/index.html')
        
        return render_template("index.html")
 
