@@ -1,8 +1,6 @@
 #-*- coding: utf-8 -*-
 from flask import Flask, render_template, request, redirect, jsonify
-from email.mime.text import MIMEText
-from email.header import Header
-import smtplib
+import zipfile
 import shutil
 import json
 import os
@@ -55,14 +53,12 @@ def getuser():
        shutil.copy("file/main.jpg", "output/img/main.jpg")
        os.remove('file/main.jpg')
 
-       msg = MIMEText('Hello {0}!! This is you own template'.foramt(result['Name']))
-       msg['Subject'] = Header('CYOT | ' + result['Name'],'utf-8')
-       msg['From'] = 'lommy101@gmail.com' # from email address
-       msg['To'] = result['email']        # to email address
-
-       with smtplib.SMTP_SSL('smtp.gmail.com') as smtp:
-           smtp.loggin('lommy101@gmail.com', '') # your email, password
-           smtp.send_message(msg)
+       f = zipfile.ZipFile('output.zip','w',zipfile.ZIP_DEFLATED)
+       startdir = "output"
+       for dirpath, dirnames, filenames in os.walk(startdir):
+           for filename in filenames:
+               f.write(os.path.join(dirpath,filename))
+       f.close()
        
        return render_template("index.html")
 
@@ -70,7 +66,6 @@ def getuser():
 def color():
     if request.method == 'POST':
         global color
-        print(color)
         value = request.form['color']
         color = str(value)
         return '', 204
