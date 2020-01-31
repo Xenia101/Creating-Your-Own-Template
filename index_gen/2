@@ -1,0 +1,36 @@
+</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.6/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.6/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.6/dist/js/uikit-icons.min.js"></script>
+       
+        <!-- jQuery CDN -->
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Arimo|Fjalla+One|Josefin+Sans&display=swap" rel="stylesheet">
+        <style>
+        html {
+            -ms-user-select: none;
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        body::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+        body{
+            font-family: 'Arimo', sans-serif;
+        }
+        .banner{
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .name:hover{
+            color:
