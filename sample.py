@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, redirect, jsonify, send_file, redirect, url_for
 import zipfile
 import shutil
 import json
@@ -17,6 +17,11 @@ def home():
 
 color = '#5bc0de'
 imgpath = ''
+
+@app.route('/download')
+def download_file():
+    path = "output.zip"
+    return send_file(path, as_attachment=True)
 
 @app.route('/result',methods = ['POST', 'GET'])
 def getuser():
@@ -66,8 +71,8 @@ def getuser():
        os.rmdir('output/img')
        os.rmdir('output/js')
        os.remove('output/index.html')
-       
-       return render_template("index.html")
+
+       return redirect(url_for('download_file'))
 
 @app.route('/color', methods=['POST'])
 def color():
