@@ -13,6 +13,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def home():
+    try:
+        os.remove('output.zip')
+    except:
+        pass
     return render_template('index.html')
 
 color = '#5bc0de'
@@ -30,9 +34,6 @@ def getuser():
        global imgpath
        result = request.form
 
-
-       print(color)
-       
        msg = list()
        editlist = [result['Title'], str(color), str(color), result['Title'],str(color),
                    result['Name'], result['TEXT'], result['location'], result['email'],
