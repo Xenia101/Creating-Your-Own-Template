@@ -1,10 +1,8 @@
 # Creating Your Own Template
 
-Supporting to create your own blog with XENIA's design
-
-The template that comes out was developed by UIkit
-
-And this is bootstrap based and powered by Python Flask
+<p align=center>
+  <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/main.PNG?raw=true">
+</p>
 
 ## Browser Support
 
