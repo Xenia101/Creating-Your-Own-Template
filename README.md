@@ -1,5 +1,3 @@
-# Creating Your Own Template
-
 <p align=center>
   <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/main.PNG?raw=true">
 </p>
