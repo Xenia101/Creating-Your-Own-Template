@@ -10,17 +10,25 @@
 
 ## EXAMPLE
 
-1. Add data to form
+1. Add your data to form
 
-<p align=center>
-  <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/form.PNG?raw=true">
+<p align=center float="left">
+  <img width="300px" src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/form.PNG?raw=true">
+  <img width="300px" src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/form2.PNG?raw=true">
 </p>
 
 2. Select custom color
 
-
 <p align=center>
   <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/color.PNG?raw=true">
+</p>
+
+3. Download ```.zip``` file (sample : ```/output/output.zip```)
+
+4. Show your own template
+
+<p align=center>
+  <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/sample.PNG?raw=true">
 </p>
 
 ### References
