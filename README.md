@@ -28,7 +28,7 @@
 4. Show your own template
 
 <p align=center>
-  <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/sample.PNG?raw=true">
+  <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/Tsample.PNG?raw=true">
 </p>
 
 ### References
