@@ -13,8 +13,8 @@
 1. Add your data to form
 
 <p align=center float="left">
-  <img width="300px" src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/formsample1.PNG?raw=true">
-  <img width="300px" src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/formsample2.PNG?raw=true">
+  <img width="310px" src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/formsample1.PNG?raw=true">
+  <img width="320px" src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/formsample2.PNG?raw=true">
 </p>
 
 2. Select custom color
