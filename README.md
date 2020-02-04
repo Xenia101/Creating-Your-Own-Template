@@ -22,7 +22,7 @@
 4. Show your own template (Data entered in step.1)
 
 <p align=center>
-  <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/Tsample.PNG?raw=true">
+  <img width="400px" src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/Tsample.PNG?raw=true">
 </p>
 
 ## Browser Support + mobile OK
