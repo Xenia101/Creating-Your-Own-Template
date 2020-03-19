@@ -2,7 +2,7 @@
   <img src="https://github.com/Xenia101/Creating-Your-Own-Template/blob/master/img/main.PNG?raw=true">
 </p>
 
-## Usage / EXAMPLE
+## Usage / Example
 
 1. Add your data to form
 
